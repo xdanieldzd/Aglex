@@ -47,7 +47,7 @@ namespace Aglex
             /* Idle function */
             Application.Idle += ((s, ev) =>
             {
-                if (Toolkit.IsReady && IsIdle) this.Invalidate();
+                if (Toolkit.IsReady) this.Invalidate();
             });
         }
 
@@ -157,6 +157,13 @@ namespace Aglex
             if (isCamActive) fpsCamera.KeysHeld.Remove(e.KeyCode);
 
             base.OnKeyUp(e);
+        }
+
+        protected override void OnLeave(EventArgs e)
+        {
+            if (isCamActive) fpsCamera.KeysHeld.Clear();
+
+            base.OnLeave(e);
         }
 
         protected override void OnMouseDown(MouseEventArgs e)

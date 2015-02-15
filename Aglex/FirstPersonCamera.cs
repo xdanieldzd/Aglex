@@ -18,7 +18,7 @@ namespace Aglex
         public const double MouseSensitivity = 0.005;
 
         public Vector3d Position { get { return position; } }
-        public Vector3d Orientation { get { return Orientation; } }
+        public Vector3d Orientation { get { return orientation; } }
 
         Vector3d position, orientation;
 
